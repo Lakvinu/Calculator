@@ -58,15 +58,18 @@ def clear():
     equation.set('')
 
 
+def rgbtohex(r,g,b):
+    return f'#{r:02x}{g:02x}{b:02x}'
+
 equation = StringVar()
-top  = Frame(window, bg = "light blue")
+top  = Frame(window, bg= rgbtohex(170,38,54))
 top.pack(side = TOP, expand = True, fill = X)
 input_place = Entry(top, font =("Arial", 20), textvariable=equation)
 input_place.pack(anchor='center', pady=10, ipady=10, ipadx = 40)
 
 #input_place.grid(ipadx = 70, ipady = 20,  padx = 10, pady = 10)
 
-bottom = Frame(window, bg="light blue")
+bottom = Frame(window, bg= rgbtohex(43,135,209))
 bottom.pack(side=LEFT, fill=BOTH, expand=True)
 bottom.pack_propagate(False)
 
