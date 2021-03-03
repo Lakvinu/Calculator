@@ -3,7 +3,7 @@ from tkinter import messagebox
 window = Tk()
 
 window.title("Simple Calculator by Lakvinu")
-
+window.resizable(0,0)
 #window.configure(background = 'light blue')
 input_line = []
 symbols = {'÷': '/', '×': '*', '−': '-', '+': '+'}
