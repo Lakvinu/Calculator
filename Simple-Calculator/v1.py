@@ -12,6 +12,10 @@ symbols = {'÷': '/', '×': '*', '−': '-', '+': '+'}
 
 def button_command(symbol):
 
+    if symbol == '0' and len(input_line) >= 2:
+        if input_line[-1] == '÷':
+            messagebox.showinfo(title= "Warning", message="Dividing by 0 will result in an undefined answer")
+            return 
 
     if symbol == '=':
 
@@ -22,17 +26,12 @@ def button_command(symbol):
 
             messagebox.showinfo(title="Warning", message="Invalid Equation")
 
+    elif symbol == 'C':
+        clear()
+
 
     elif symbol in symbols and len(input_line) == 0:
         messagebox.showinfo(title="Warning", message="Input a number instead")
-
-    elif symbol == '0' and len(input_line) >= 2:
-        if input_line[-1] == '÷':
-           messagebox.showinfo(title= "Warning", message="Dividing by 0 will result in an undefined answer")
-
-
-    elif symbol == 'C':
-        clear()
 
     else:
 
