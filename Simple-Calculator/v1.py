@@ -6,7 +6,7 @@ window.title("Simple Calculator by Lakvinu")
 window.resizable(0,0)
 #window.configure(background = 'light blue')
 
-window.iconphoto(True, PhotoImage(file=r"C:\\Users\\Lakvinu\\Desktop\\Projects\\Calculator\\Pics\\v3.png"))
+#window.iconphoto(True, PhotoImage(file=r"C:\\Users\\Lakvinu\\Desktop\\Projects\\Calculator\\Pics\\v3.png"))
 input_line = []
 symbols = {'÷': '/', '×': '*', '−': '-', '+': '+'}
 
