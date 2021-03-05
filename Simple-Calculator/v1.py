@@ -5,25 +5,37 @@ window = Tk()
 window.title("Simple Calculator by Lakvinu")
 window.resizable(0,0)
 #window.configure(background = 'light blue')
+
+window.iconphoto(True, PhotoImage(file=r"C:\\Users\\Lakvinu\\Desktop\\Projects\\Calculator\\Pics\\v3.png"))
 input_line = []
 symbols = {'÷': '/', '×': '*', '−': '-', '+': '+'}
 
 def button_command(symbol):
 
-    if symbol in symbols and len(input_line) == 0:
-        messagebox.showinfo(title="Warning", message= "The " + symbol + " is not allowed at the beginning")
-
-    if symbol == '0' and len(input_line) >= 2:
-        if input_line[-1] == '÷':
-            messagebox.showinfo(title= "Warning", message="Dividing by 0 will result in an undefined Awnser")
 
     if symbol == '=':
-        equal_sign()
 
-    elif symbol == 'c':
+        try:
+            equal_sign()
+
+        except:
+
+            messagebox.showinfo(title="Warning", message="Invalid Equation")
+
+
+    elif symbol in symbols and len(input_line) == 0:
+        messagebox.showinfo(title="Warning", message="Input a number instead")
+
+    elif symbol == '0' and len(input_line) >= 2:
+        if input_line[-1] == '÷':
+           messagebox.showinfo(title= "Warning", message="Dividing by 0 will result in an undefined answer")
+
+
+    elif symbol == 'C':
         clear()
 
     else:
+
         if symbol in symbols and input_line[-1] in symbols:
             input_line[-1] = symbol
 
